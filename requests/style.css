@@ -1,0 +1,385 @@
+*
+{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+body
+{
+    height:100vh;
+    overflow:hidden;
+}
+#sideprofileham,#sideprofileham1
+{
+    width:30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px  gray;
+    cursor: pointer;
+    position:relative;
+}
+#sideprofileham>*,#sideprofileham1>*
+{
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    transition:opacity 0.5s;
+}
+#sideprofileham>#side1,#sideprofileham1>#side11
+{
+    opacity:1;
+    background-image: url('/resources/hamburger.png');
+    
+}
+#sideprofileham>#side2,#sideprofileham1>#side12
+{
+    opacity:0;
+    background-image: url('/resources/close.png');
+}
+#sideprofileham:hover,#sideprofileham1:hover
+{
+    filter: invert(100%);
+}
+#comtitle>img
+{
+    height: 40px;
+    /* margin-right:10%; */
+
+}
+#comname
+{
+    font-weight: bold;
+    font-size:1.2em;
+    padding-left:6%;
+}
+#navcontainer
+{
+    box-shadow: 0 0 5px rgb(90, 90, 90);
+    position:sticky;
+    top:0;
+}
+#rightinnav li
+{
+    width:120px;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#rightinnav li>a
+{
+    width:100%;
+    height:80%;
+    border-radius:20px;
+}
+#rightinnav li.selected>a
+{
+    cursor:default;
+}
+#rightinnav li:not(.selected,#sell)::after
+{
+    content:'';
+    width:0%;
+    height:3px;
+    background: rgb(10, 190, 10);
+    display:block;
+    transition:width 0.1s;
+    transition-timing-function: linear;
+}
+
+#rightinnav .selected>a
+{
+    background-color: rgb(192, 192, 192);
+}
+#sell>a
+{
+    border-top: 5px solid rgb(199, 0, 0);
+    border-right: 5px solid rgb(235, 182, 9);
+    border-bottom: 5px solid rgb(32, 192, 11);
+    border-left: 5px solid rgb(4, 123, 179);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#rightinnav li:not(.selected,#sell):hover::after
+{
+    width:100%;
+}
+#sideprofile
+{
+    width:8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    gap:5%;
+    background:black;
+    position:absolute;
+    padding:0.7%;
+    padding-top:2%;
+    left:0;
+    transform:translateX(-100%);
+    transition:0.5s;
+    z-index:10;
+}
+#proitem1
+{
+    width:60%;
+}
+#proitem1 img
+{
+    width:100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow:0 0 0.5vw gray ;
+}
+.proitem:not(#proitem1)
+{
+    padding:7%;
+    width:100%;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.proitem:not(#proitem1):hover
+{
+    background: rgb(32, 32, 32);
+    
+    cursor: pointer;
+}
+#concards
+{
+    overflow-y:scroll;
+    display:flex;
+    width:100%;
+    gap:5%;
+    flex-wrap: wrap;
+    /* background-color: rgb(177, 243, 177); */
+    position:relative;
+    padding:1% 4% 4% 4%;
+    justify-content: space-evenly;
+    /* align-items: center; */
+}
+#nocard
+{
+    left:0;
+    top:0;
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+    font-weight: bold ;
+    font-size: 5vw;
+    position:absolute;
+    background-color: rgb(214, 214, 214);
+    color:rgb(71, 71, 71);
+    z-index:-10;
+    opacity:0;
+}
+#concards>.sellcard
+{
+    margin-top:3%;
+    width:300px;
+    height:350px;
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.63);
+    border-radius:20px;
+    overflow:hidden;
+    background-color:white;
+    display:flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+#concards .sellcard .imgcon
+{
+    height:60%;
+    background-color: rgb(201, 201, 201);
+    width:100%;
+    display:flex;
+    padding:5px;
+    align-items: center;
+    justify-content: center;
+    border-radius:20px 20px 0 0;
+    overflow: hidden;
+    position:relative;
+    z-index:0;
+}
+.sellcard .imgcon .img
+{
+    background-image: url('/resources/laptop.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height:100%;
+    width:100%;
+    border-radius: 20px;
+    background-color: rgb(211, 211, 211);
+    /* display: none; */
+}
+.descon
+{
+    padding:7px;
+    height:39%;
+    position:relative;
+}
+.productname
+{
+    font-size: 1.2em;
+    font-weight: bold;
+}
+.productprice
+{
+    color:rgb(5, 85, 5);
+    font-weight:bolder;
+    font-size:1.5em;
+}
+.butdes
+{
+    margin-top:3%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.butdes>*
+{
+    padding:7px;
+    width:30%;
+    color:white;
+    background-color: rgb(7, 73, 7);
+    font-weight:bold;
+    border-radius: 5px;
+    cursor:pointer;
+    display: grid;
+    place-items: center;
+}
+.butdes>*:hover
+{
+    filter:brightness(80%);
+}
+.reject
+{
+    background-color: rgb(138, 4, 4);
+}
+#plantcon
+{
+    height:35px;
+    aspect-ratio: 1 !important;
+    border-radius: 50%;
+    /* border:2px solid rgb(4, 158, 4); */
+    box-shadow: 0 0 5px  rgb(4, 158, 4);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+}
+#plantcon:hover
+{
+    filter:brightness(120%);
+}
+#plantham
+{
+    height: 85%;
+    width: 75%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+#mobmenu
+{
+    padding:0px ;
+    background-color: rgb(236, 236, 236);
+    height:0;
+    transition:height 0.2s;
+    overflow: hidden;
+}
+#mobmenu>a
+{
+    text-decoration: none;
+    display:block;
+    padding:7px;
+    border-radius: 20px;
+    background-color: rgb(209, 209, 209);
+    text-align: center;
+    margin-bottom: 7px;
+}
+#mobmenu>a:nth-child(4)
+{
+    background-color: rgb(189, 240, 189);
+}
+.arrowdes
+{
+    position:absolute;
+    right:10%;
+    top: 10%;
+    padding:3px;
+    border-radius: 50%;
+    width:30px;
+    aspect-ratio: 1;
+    background-repeat: no-repeat;
+    background-size: 60%;
+    background-position: center;
+    background-image:url('../resources/arrowup.png');
+}
+.arrowdes:hover
+{
+    background-color: rgb(206, 206, 206);
+}
+.imgcon>.popdes
+{
+    transition:opacity 0.2s;
+    opacity:0;
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color:rgba(0, 0, 0, 0.8);
+    color:white;
+    z-index:1000;
+    font-size: 0.8em;
+    padding:3%;
+    
+}
+.arrowdes:hover ~ .tooltip
+{
+    opacity:1;
+}
+#chatlogo
+{
+    position:fixed;
+    bottom:4%;
+    right:4%;
+    width:4vw;
+    aspect-ratio: 1;
+    z-index:200;
+    border-radius:50%;
+    background-color: rgb(65, 180, 65);
+    box-shadow:0 0 10px rgb(0, 0, 0); 
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    background-image:url('../resources/chatopenlogo.png');
+    cursor:pointer;
+}
+#chatlogo>*
+{
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+}

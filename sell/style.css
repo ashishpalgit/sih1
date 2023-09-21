@@ -1,0 +1,380 @@
+*
+{
+    box-sizing:border-box;
+    padding:0;
+    margin:0;
+}
+body
+{
+    height:100vh;
+    overflow:hidden;
+}
+#sideprofileham,#sideprofileham1
+{
+    width:30px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px  gray;
+    cursor: pointer;
+    position:relative;
+}
+#sideprofileham>*,#sideprofileham1>*
+{
+    background-repeat: no-repeat;
+    background-size: 50%;
+    background-position: center;
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0;
+    left:0;
+    transition:opacity 0.5s;
+}
+#sideprofileham>#side1,#sideprofileham1>#side11
+{
+    opacity:1;
+    background-image: url('../resources/hamburger.png');
+    
+}
+#sideprofileham>#side2,#sideprofileham1>#side12
+{
+    opacity:0;
+    background-image: url('../resources/close.png');
+}
+#sideprofileham:hover,#sideprofileham1:hover
+{
+    filter: invert(100%);
+}
+#comtitle>img
+{
+    height: 40px;
+    /* margin-right:10%; */
+
+}
+#comname
+{
+    font-weight: bold;
+    font-size:1.2em;
+    padding-left:6%;
+}
+#navcontainer
+{
+    box-shadow: 0 0 5px rgb(90, 90, 90);
+    position:sticky;
+    top:0;
+    z-index:100;
+}
+#rightinnav li
+{
+    width:120px;
+    text-align:center;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+}
+#rightinnav li>a
+{
+    width:100%;
+    height:80%;
+    border-radius:20px;
+}
+#rightinnav li.selected>a
+{
+    cursor:default;
+}
+#rightinnav li:not(.selected,#sell)::after
+{
+    content:'';
+    width:0%;
+    height:3px;
+    background: rgb(10, 190, 10);
+    display:block;
+    transition:width 0.1s;
+    transition-timing-function: linear;
+}
+
+#rightinnav .selected>a
+{
+    background-color: rgb(219, 219, 219);
+}
+#sell>a
+{
+    border-top: 5px solid rgb(199, 0, 0);
+    border-right: 5px solid rgb(235, 182, 9);
+    border-bottom: 5px solid rgb(32, 192, 11);
+    border-left: 5px solid rgb(4, 123, 179);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+}
+#rightinnav li:not(.selected,#sell):hover::after
+{
+    width:100%;
+}
+#sideprofile
+{
+    width:8%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content:flex-start;
+    gap:5%;
+    background:black;
+    position:absolute;
+    padding:0.7%;
+    padding-top:2%;
+    left:0;
+    transform:translateX(-100%);
+    transition:0.5s;
+    z-index:10;
+}
+#proitem1
+{
+    width:60%;
+}
+#proitem1 img
+{
+    width:100%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    box-shadow:0 0 0.5vw gray ;
+}
+.proitem:not(#proitem1)
+{
+    padding:7%;
+    width:100%;
+    border-radius:8px;
+    color:white;
+    font-weight:bold;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1vw;
+}
+.proitem:not(#proitem1):hover
+{
+    background: rgb(32, 32, 32);
+    
+    cursor: pointer;
+}
+
+#plantcon
+{
+    height:35px;
+    aspect-ratio: 1 !important;
+    border-radius: 50%;
+    /* border:2px solid rgb(4, 158, 4); */
+    box-shadow: 0 0 5px  rgb(4, 158, 4);
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    overflow:hidden;
+    position:relative;
+    cursor:pointer;
+}
+#plantcon:hover
+{
+    filter:brightness(120%);
+}
+#plantham
+{
+    height: 85%;
+    width: 75%;
+    position:absolute;
+    left:50%;
+    top:50%;
+    transform:translate(-50%,-50%);
+}
+#mobmenu
+{
+    padding:0px ;
+    background-color: rgb(236, 236, 236);
+    height:0;
+    transition:height 0.2s;
+    overflow: hidden;
+}
+#mobmenu>a
+{
+    text-decoration: none;
+    display:block;
+    padding:7px;
+    border-radius: 20px;
+    background-color: rgb(209, 209, 209);
+    text-align: center;
+    margin-bottom: 7px;
+}
+#mobmenu>a:nth-child(4)
+{
+    background-color: rgb(189, 240, 189);
+}
+#addcon
+{
+    display:flex;
+    position:relative;
+    z-index:0;
+}
+#addmenu
+{
+    width:15%;
+    height:100%;
+    background-color: rgb(95, 95, 95);
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    gap:3%;
+    padding:1.5%;
+}
+#addmenu>*
+{
+    width:100%;
+}
+#addbut
+{
+    border-radius: 50%;
+    height:10%;
+    aspect-ratio: 1;
+    width:auto;
+    background-color:rgb(0, 126, 0);
+    color:white;
+    font-weight:bolder;
+    background-image: url('../resources/plus.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90%;
+    cursor:pointer;
+}
+#addbut:hover
+{
+    background-color:rgb(1, 75, 1);
+}
+.item
+{
+    padding:3%;
+    text-align: center;
+    /* color:white; */
+    background-color:rgb(122, 122, 122);
+    border-radius: 5px;
+    font-size:1vw;
+    text-transform: capitalize;
+    font-weight: 500;
+    overflow-wrap: break-word;
+    cursor: pointer;
+}
+#formcon
+{
+    width:85%;
+    height:100%;
+    position:relative;
+    
+    background-color: white;
+    z-index:-1;
+}
+#noform
+{
+    position: absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    z-index:0;
+    width:100%;
+    height:100%;
+    background-image: url('../resources/plantham.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 10%;
+    background-color: rgb(255, 255, 255);
+}
+#addform
+{
+    width:100%;
+    height:100%;
+    display:grid;
+    place-items: center;
+    position: absolute;
+    top:0;
+    left:0;
+    background-color: inherit;
+    z-index: -1;
+    overflow-y:scroll;
+    padding:20px;
+    font-size: 1vw;
+}
+#addform>form
+{
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.315);
+    border-radius:20px;
+    padding:20px;
+    width:40%;
+    background-color: rgb(247, 247, 247);
+}
+#addform>form textarea
+{
+    width:100%;
+    box-sizing: border-box;
+    padding:6px;
+    resize:none;
+    outline:none;
+    border-radius:6px;
+    border:1px solid rgb(221, 221, 221);
+}
+#addform>form input:focus,#addform>form textarea:focus
+{
+    outline:none;
+    box-shadow: none;
+    border-color: green;
+}
+#charcount
+{
+    float:right;
+    font-size: 0.8em;
+    color:rgb(78, 78, 78);
+}
+#formbut
+{
+    display:flex;
+    align-items: center;
+    justify-content: space-evenly;
+    gap:5%;
+}
+#formbut>*
+{
+    width:30%;
+    color:white;
+}
+#imgpreview
+{
+    position:relative;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    padding:7px;
+    padding-bottom: 0;
+    gap:2%;
+}
+.lab
+{
+    width:30%;
+    aspect-ratio: 1;
+    border-radius: 10px;
+    cursor:pointer;
+    background:url('../resources/imguplogo.png'), rgb(202, 202, 202);
+    background-size:60%;
+    background-position:center;
+    background-repeat:no-repeat;
+    border:1px solid black;
+}
+#imgpreview>input
+{
+    position:absolute;
+    opacity:0;
+    z-index:-1;
+}
+#imgwarn
+{
+    display:none;
+    color:red;
+    font-size: 0.8em;
+
+}
